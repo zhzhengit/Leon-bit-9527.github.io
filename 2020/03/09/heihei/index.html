@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>计算机组成原理学习笔记02-简化模型机 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="简化模型机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成原理学习笔记02-简化模型机">
+<meta property="og:url" content="http://yoursite.com/2020/03/09/heihei/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="简化模型机">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://m.qpic.cn/psc?/V10lG2qi4MkDZJ/xBo1HguJwfqPLd*kRKpWsKzHv5Qr8hm.GEs*C9omNdrsC.5AyORloPVO2zN97tPU0W.luihk*V3kXDwV2OBy0A!!/b&bo=qgLDAQAAAAADB0g!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psc?/V10lG2qi4MkDZJ/WmaLtG4DKwtTVCYYotv*PWXrXtzRsTHx3NpX7gLTS9KaO8luXPUx.jeTybjRNIOGBDdmiobOBOgcXHGFn7e.6A4ToWkk8yZ*x4YveGLZ.ss!/b&bo=IwX2AwAAAAADF.E!&rf=viewer_4">
+<meta property="article:published_time" content="2020-03-09T14:23:22.000Z">
+<meta property="article:modified_time" content="2020-03-09T14:42:31.194Z">
 <meta property="article:author" content="椰子红茶">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://m.qpic.cn/psc?/V10lG2qi4MkDZJ/xBo1HguJwfqPLd*kRKpWsKzHv5Qr8hm.GEs*C9omNdrsC.5AyORloPVO2zN97tPU0W.luihk*V3kXDwV2OBy0A!!/b&bo=qgLDAQAAAAADB0g!&rf=viewer_4">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -146,16 +153,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-heihei" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-heihei" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/09/heihei/">计算机组成原理学习笔记02-简化模型机</a>
+    <h1 class="article-title" itemprop="name">
+      计算机组成原理学习笔记02-简化模型机
     </h1>
   
 
@@ -168,10 +173,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="简化模型机"><a href="#简化模型机" class="headerlink" title="简化模型机"></a>简化模型机</h1>
-        
-          <a class="article-more-a" href="/2020/03/09/heihei/#more">more >></a>
-        
+        <h1 id="简化模型机"><a href="#简化模型机" class="headerlink" title="简化模型机"></a>简化模型机</h1><a id="more"></a>
+<h2 id="简化模型机组成"><a href="#简化模型机组成" class="headerlink" title="简化模型机组成"></a>简化模型机组成</h2><p><img src="http://m.qpic.cn/psc?/V10lG2qi4MkDZJ/xBo1HguJwfqPLd*kRKpWsKzHv5Qr8hm.GEs*C9omNdrsC.5AyORloPVO2zN97tPU0W.luihk*V3kXDwV2OBy0A!!/b&bo=qgLDAQAAAAADB0g!&rf=viewer_4" alt="简化模型机"></p>
+<ol>
+<li>程序计数器PC（program count）<br>-4位二进制加1计数器，计数范围由0000<del>1111（0</del>F）。<br>其中<br>-CLR引脚用于计数器清零<br>-CLK信号是其计数脉冲<br>-Cp是计数允许信号<br>-Ep是计数器内容输出控制信号，用于控制三态门的输出<br>当Cp信号有效（高电平）时，如果CLK信号出现上升沿，则计数器内容加1.当计数器内容为二进制1111时，再加1，则变为0000。</li>
+<li>总线结构<br>-任一时刻，挂接在总线上的部件只允许有一个部件向总线输出信号，允许多个部件接收信号。<br>-任何具有输出功能的部件，必须通过三态门连接到总线上。</li>
+<li>累加器A（Accumulator）<br>-8位寄存器，主要用于存放运算中间结果，故称累加器。<br>-累加器A中的数据有两个输出方向：<ol>
+<li>通过三态门输出到总线方向和直接送到ALU的方向。</li>
+<li>即A中的数据信号是始终连通到ALU的，不受Ea信号的控制。Ea信号控制数据向总线的输送。</li>
+</ol>
+</li>
+<li>寄存器B<br> -8位寄存器，与累加器A一起给ALU提供数据。<br> -它的数据直接送入ALU，不送给总线，无需三态输出，无Enable控制端。</li>
+<li>算术逻辑单元ALU(Arithmtic Logical Unit)<br> -CPU内部数据加工部件，实现各种运算。<br> -简化模型的ALU只实现加法和减法两种运算，是可控的8位二进制加减法器。</li>
+<li>指令寄存器IR（instruction register）<br>-8位的二进制数寄存器，其内部的数据用作指令，因此称为指令寄存器。<br>-指令从PROM中传松过来的8位二进制数。这8位数据中高4位称为操作码，直接送给控制部件CON；低4位成为操作数，通过三态门送到总线上。</li>
+<li>控制部件CON<br>-计算机中各部件动作由其控制引脚信号决定。如当Cp=1，CLR=0，Ep=0，CLK出现上升沿时，PC内数据加1。<br>-控制引脚信号从控制部件CON发出。每个时钟周期，CON发送一组控制信号，这一组控制信号成为控制字。本模型中，CON发出的控制字是12位的。CON = Cp Ep LM ER LI EI LA EA SU EU LB IO<br>-控制部件是CPU内最复杂的部分，CPU复杂程度主要取决于控制部件的设计。控制部件可采用<strong>硬布线</strong>的逻辑实现，也可以采用<strong>微程序</strong>控制的方式实现。</li>
+<li>存储器（Memory）<br> -若PROM是16×8的只读存储器，内部有16个存储单元，每个存储单元可存放8位二进制数。<br> -为读取PROM中的某个存储单元内容，需要提供4位地址信号来选择。<br> MAR（Memory Address Register）就是向PROM提供地址信号的。当MAR的内容为1000B时，PROM的8号存储单元被选中。如果Ep=1，则8号存储单元的内容可送到总线上。</li>
+<li>输出寄存器O与外设D<br> -计算机内部数据要松给外部设备进行显示或处理时，都先送到输出存储器中进行暂存。<br> -暂存在输出寄存器中的数据直接与外部设备D相连接。<br> -简化模型中，外设D由8个发光二极管（LED）组成。8个LED的亮灭直接反映了输出寄存器O中的8位二进制数据。</li>
+</ol>
+<h2 id="模型机的运行过程"><a href="#模型机的运行过程" class="headerlink" title="模型机的运行过程"></a>模型机的运行过程</h2><p><img src="http://m.qpic.cn/psc?/V10lG2qi4MkDZJ/WmaLtG4DKwtTVCYYotv*PWXrXtzRsTHx3NpX7gLTS9KaO8luXPUx.jeTybjRNIOGBDdmiobOBOgcXHGFn7e.6A4ToWkk8yZ*x4YveGLZ.ss!/b&bo=IwX2AwAAAAADF.E!&rf=viewer_4" alt="简化模型机"></p>
+<ol>
+<li>CLK信号<br>-计算机中，CLK信号用于各部件同步。由专门时钟提供。CLK信号的周期是固定的，称为<strong>时钟周期</strong>。在现代计算机中称为<strong>CPU的主频</strong>。<br>-计算机上电后，CLK就以恒定频率由始终电路提供给计算机中的各部件。各部件一般在CLK的上升沿或下降沿产生动作。<br>-初始上电时，各部件CLR信号首先有效，相应部件清零。如PC的内容，一上电就可以保证为0。</li>
+<li>控制字<br>-每一个CLK开始，控制部件发出一个控制字；当CLK上升沿到来时，通过控制字相应部件产生动作。无论机器多复杂，一个CLK周期内，在控制字下部件只能完成一次动作。<br>-当CLK上升沿到达时，PC中的内容输出到总线上，通过总线传送到MAR中，从而选中PROM中的相应存储单元。<br>-初始状态：<ol>
+<li>存储器中实现存放一些数据</li>
+<li>上电时，各寄存器有初始值：PC = 0000B</li>
+<li>上电后，CLK由CON不断送出，模型机进入自动运行状态</li>
+</ol>
+</li>
+<li>简化模型机运行过程<br> -地址节拍：第一个CLK，记为TO，这时，Ep=1，LM=1。该周期内，PC的内容送至MAR，用于选中相应的存储单元，因此该周期实现了送地址的功能，成为地址节拍。<br> -取指节拍：第二个CLK，记为T1，此时，ER=1，LI=1。选中的PROM单元内容通过总线送到IR中。这时，该PROM单元中的内容是作为指令来使用的。<br> -计数节拍：第3个CLK，记为T2,这时，Cp=1。该节拍实现PC的内容加1。<br> -后续3个节拍，CON发出的控制字受    IR高4位（操作码）的影响。<h2 id="取地址→取指令→计数器-1-此过程是固定的，即为前三个clk"><a href="#取地址→取指令→计数器-1-此过程是固定的，即为前三个clk" class="headerlink" title=" [取地址→取指令→计数器+1]此过程是固定的，即为前三个clk"></a> [取地址→取指令→计数器+1]此过程是固定的，即为前三个clk</h2> 未完待续…</li>
+</ol>
+
       
 
       
@@ -182,16 +212,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/09/heihei/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/09/heihei/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/08/mycomputer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计算机组成原理学习笔记01</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -211,203 +300,14 @@
 
 
 
-
   
-    <article id="post-mycomputer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/08/mycomputer/">计算机组成原理学习笔记01</a>
-    </h1>
   
 
-        
-        <a href="/2020/03/08/mycomputer/" class="archive-article-date">
-  	<time datetime="2020-03-08T14:47:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="计算机组成原理概述"><a href="#计算机组成原理概述" class="headerlink" title="计算机组成原理概述"></a>计算机组成原理概述</h1>
-        
-          <a class="article-more-a" href="/2020/03/08/mycomputer/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/08/mycomputer/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-《道德经》-老子诞辰日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/08/%E3%80%8A%E9%81%93%E5%BE%B7%E7%BB%8F%E3%80%8B-%E8%80%81%E5%AD%90%E8%AF%9E%E8%BE%B0%E6%97%A5/">谈《道德经》-老子诞辰日 </a>
-    </h1>
   
 
-        
-        <a href="/2020/03/08/%E3%80%8A%E9%81%93%E5%BE%B7%E7%BB%8F%E3%80%8B-%E8%80%81%E5%AD%90%E8%AF%9E%E8%BE%B0%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2020-03-08T07:15:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="关于《道德经》的几点阐述"><a href="#关于《道德经》的几点阐述" class="headerlink" title="关于《道德经》的几点阐述"></a>关于《道德经》的几点阐述</h1>
-        
-          <a class="article-more-a" href="/2020/03/08/%E3%80%8A%E9%81%93%E5%BE%B7%E7%BB%8F%E3%80%8B-%E8%80%81%E5%AD%90%E8%AF%9E%E8%BE%B0%E6%97%A5/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/08/%E3%80%8A%E9%81%93%E5%BE%B7%E7%BB%8F%E3%80%8B-%E8%80%81%E5%AD%90%E8%AF%9E%E8%BE%B0%E6%97%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87blog/">我的第一篇blog</a>
-    </h1>
   
 
-        
-        <a href="/2020/03/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87blog/" class="archive-article-date">
-  	<time datetime="2020-03-07T07:25:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="我的博客文章编写"><a href="#我的博客文章编写" class="headerlink" title="我的博客文章编写"></a>我的博客文章编写</h1>
-        
-          <a class="article-more-a" href="/2020/03/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87blog/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -430,8 +330,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
