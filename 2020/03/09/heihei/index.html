@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="简化模型机">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://m.qpic.cn/psc?/V10lG2qi4MkDZJ/xBo1HguJwfqPLd*kRKpWsKzHv5Qr8hm.GEs*C9omNdrsC.5AyORloPVO2zN97tPU0W.luihk*V3kXDwV2OBy0A!!/b&bo=qgLDAQAAAAADB0g!&rf=viewer_4">
-<meta property="og:image" content="http://m.qpic.cn/psc?/V10lG2qi4MkDZJ/WmaLtG4DKwtTVCYYotv*PWXrXtzRsTHx3NpX7gLTS9KaO8luXPUx.jeTybjRNIOGBDdmiobOBOgcXHGFn7e.6A4ToWkk8yZ*x4YveGLZ.ss!/b&bo=IwX2AwAAAAADF.E!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psc?/V13fOdbi0cV8ux/qWkkGOdvaHRbO0s2SzmJ0L8dFy96*aqzItHVy8scvriRZkqq6r0tntsHWEyBnl1P6k022GfLrasYAvlv.MAJaQ!!/b&bo=qgLDAaoCwwEDCSw!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psc?/V13fOdbi0cV8ux/OgsY8p8GsL2M2s50.OYmeqqBoyUQ8SerC7ESwF9Stp3AMZIq2tPzdKzwxjyn4gYBpTYlUl7TQfGExlbytoJKVpDvejfoUtUd.QDhlP5dwhs!/b&bo=IwX2AyMF9gMDGTw!&rf=viewer_4">
 <meta property="article:published_time" content="2020-03-09T14:23:22.000Z">
-<meta property="article:modified_time" content="2020-03-09T14:42:31.194Z">
+<meta property="article:modified_time" content="2020-03-11T06:20:26.848Z">
 <meta property="article:author" content="椰子红茶">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://m.qpic.cn/psc?/V10lG2qi4MkDZJ/xBo1HguJwfqPLd*kRKpWsKzHv5Qr8hm.GEs*C9omNdrsC.5AyORloPVO2zN97tPU0W.luihk*V3kXDwV2OBy0A!!/b&bo=qgLDAQAAAAADB0g!&rf=viewer_4">
+<meta name="twitter:image" content="http://m.qpic.cn/psc?/V13fOdbi0cV8ux/qWkkGOdvaHRbO0s2SzmJ0L8dFy96*aqzItHVy8scvriRZkqq6r0tntsHWEyBnl1P6k022GfLrasYAvlv.MAJaQ!!/b&bo=qgLDAaoCwwEDCSw!&rf=viewer_4">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -174,7 +174,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="简化模型机"><a href="#简化模型机" class="headerlink" title="简化模型机"></a>简化模型机</h1><a id="more"></a>
-<h2 id="简化模型机组成"><a href="#简化模型机组成" class="headerlink" title="简化模型机组成"></a>简化模型机组成</h2><p><img src="http://m.qpic.cn/psc?/V10lG2qi4MkDZJ/xBo1HguJwfqPLd*kRKpWsKzHv5Qr8hm.GEs*C9omNdrsC.5AyORloPVO2zN97tPU0W.luihk*V3kXDwV2OBy0A!!/b&bo=qgLDAQAAAAADB0g!&rf=viewer_4" alt="简化模型机"></p>
+<h2 id="简化模型机组成"><a href="#简化模型机组成" class="headerlink" title="简化模型机组成"></a>简化模型机组成</h2><p><img src="http://m.qpic.cn/psc?/V13fOdbi0cV8ux/qWkkGOdvaHRbO0s2SzmJ0L8dFy96*aqzItHVy8scvriRZkqq6r0tntsHWEyBnl1P6k022GfLrasYAvlv.MAJaQ!!/b&bo=qgLDAaoCwwEDCSw!&rf=viewer_4" alt="简化模型机"></p>
 <ol>
 <li>程序计数器PC（program count）<br>-4位二进制加1计数器，计数范围由0000<del>1111（0</del>F）。<br>其中<br>-CLR引脚用于计数器清零<br>-CLK信号是其计数脉冲<br>-Cp是计数允许信号<br>-Ep是计数器内容输出控制信号，用于控制三态门的输出<br>当Cp信号有效（高电平）时，如果CLK信号出现上升沿，则计数器内容加1.当计数器内容为二进制1111时，再加1，则变为0000。</li>
 <li>总线结构<br>-任一时刻，挂接在总线上的部件只允许有一个部件向总线输出信号，允许多个部件接收信号。<br>-任何具有输出功能的部件，必须通过三态门连接到总线上。</li>
@@ -190,7 +190,7 @@
 <li>存储器（Memory）<br> -若PROM是16×8的只读存储器，内部有16个存储单元，每个存储单元可存放8位二进制数。<br> -为读取PROM中的某个存储单元内容，需要提供4位地址信号来选择。<br> MAR（Memory Address Register）就是向PROM提供地址信号的。当MAR的内容为1000B时，PROM的8号存储单元被选中。如果Ep=1，则8号存储单元的内容可送到总线上。</li>
 <li>输出寄存器O与外设D<br> -计算机内部数据要松给外部设备进行显示或处理时，都先送到输出存储器中进行暂存。<br> -暂存在输出寄存器中的数据直接与外部设备D相连接。<br> -简化模型中，外设D由8个发光二极管（LED）组成。8个LED的亮灭直接反映了输出寄存器O中的8位二进制数据。</li>
 </ol>
-<h2 id="模型机的运行过程"><a href="#模型机的运行过程" class="headerlink" title="模型机的运行过程"></a>模型机的运行过程</h2><p><img src="http://m.qpic.cn/psc?/V10lG2qi4MkDZJ/WmaLtG4DKwtTVCYYotv*PWXrXtzRsTHx3NpX7gLTS9KaO8luXPUx.jeTybjRNIOGBDdmiobOBOgcXHGFn7e.6A4ToWkk8yZ*x4YveGLZ.ss!/b&bo=IwX2AwAAAAADF.E!&rf=viewer_4" alt="简化模型机"></p>
+<h2 id="模型机的运行过程"><a href="#模型机的运行过程" class="headerlink" title="模型机的运行过程"></a>模型机的运行过程</h2><p><img src="http://m.qpic.cn/psc?/V13fOdbi0cV8ux/OgsY8p8GsL2M2s50.OYmeqqBoyUQ8SerC7ESwF9Stp3AMZIq2tPzdKzwxjyn4gYBpTYlUl7TQfGExlbytoJKVpDvejfoUtUd.QDhlP5dwhs!/b&bo=IwX2AyMF9gMDGTw!&rf=viewer_4" alt="简化模型机"></p>
 <ol>
 <li>CLK信号<br>-计算机中，CLK信号用于各部件同步。由专门时钟提供。CLK信号的周期是固定的，称为<strong>时钟周期</strong>。在现代计算机中称为<strong>CPU的主频</strong>。<br>-计算机上电后，CLK就以恒定频率由始终电路提供给计算机中的各部件。各部件一般在CLK的上升沿或下降沿产生动作。<br>-初始上电时，各部件CLR信号首先有效，相应部件清零。如PC的内容，一上电就可以保证为0。</li>
 <li>控制字<br>-每一个CLK开始，控制部件发出一个控制字；当CLK上升沿到来时，通过控制字相应部件产生动作。无论机器多复杂，一个CLK周期内，在控制字下部件只能完成一次动作。<br>-当CLK上升沿到达时，PC中的内容输出到总线上，通过总线传送到MAR中，从而选中PROM中的相应存储单元。<br>-初始状态：<ol>
@@ -272,6 +272,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/03/11/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF%E7%9A%84%E8%AE%BE%E8%AE%A1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          电子设计系列-模拟电路设计
+        
+      </div>
+    </a>
   
   
     <a href="/2020/03/08/mycomputer/" id="article-nav-older" class="article-nav-link-wrap">
